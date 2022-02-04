@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "8633822d-8b64-447b-af53-8addd8983f36",
+		"name": "Data Driven Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DataDriven",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"check status code\"]= responseCode.code==200;",
+							"",
+							"tests[\"check status in the response\"]=responseBody.has(\"success\")",
+							"",
+							"",
+							"pm.test(\"check Content-Type header\", function()",
+							"{",
+							"    pm.response.to.be.header(\"Content-Type\",\"application/json\");",
+							"}",
+							"",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"{{name}}\",\n    \"salary\":\"{{salary}}\",\n    \"age\":\"{{age}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dummy.restapiexample.com/api/v1/create",
+					"protocol": "http",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

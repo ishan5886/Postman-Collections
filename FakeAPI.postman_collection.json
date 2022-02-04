@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "1c7155a2-09f9-4ad0-ba71-a11ab2a039f3",
+		"name": "FakeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GETUsers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//postman.setNextRequest(\"Next Request Name in Collection\") - Workflow in Postman",
+							"",
+							"//postman.setNextRequest(\"null\") - if no further request in collection"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/userdata/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"userdata",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"//postman.setGlobalVariable(\"url\",\"http://localhost:3000\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
